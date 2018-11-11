@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import todoLogo from './todo.png';
 import './App.css';
-import Todo from "./todo.js";
-import Add from "./add.js";
-import Update from "./update.js";
-import data from './todoData.json';
+import Todo from "./component/todo.js";
+import Add from "./component/add";
+import Update from "./component/update";
+import data from './component/todoData.json';
 
 class App extends Component {
 
