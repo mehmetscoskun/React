@@ -4,8 +4,9 @@ class Update extends React.Component {
 
     constructor (props) {
         super(props);
+        console.log(props)
         this.state = {
-            description: '',
+            description: props.text,
             deadline: ''
         }
         this.handleDescription = this.handleDescription.bind(this);
@@ -15,9 +16,9 @@ class Update extends React.Component {
     
     handleDescription (event) {
       this.setState({
-          description: event.target.value,
+          description:  event.target.value,
           deadline: this.state.deadline
-      })
+      })    
     }
 
     handleDeadline (event) {
@@ -37,7 +38,7 @@ class Update extends React.Component {
 
         return(
                 <form onSubmit={this.handleSubmit}>
-                    <input className="inputTodo description" type="text" onChange={this.handleDescription} placeholder={text}/>
+                    <input className="inputTodo description" type="text" onChange={this.handleDescription} value={this.state.description}/>
                     <input className="inputTodo deadline" type="text" onChange={this.handleDeadline} placeholder={date}/> 
                     <button className="inputTodo myButton" type="submit" onClick={()=>updateTodo('update', index, this.state)}>update</button>
                     <button className="inputTodo myButton" type="submit" onClick={()=>updateTodo('cancel')}>cancel</button>
